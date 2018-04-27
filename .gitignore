@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+.DS_Store
+
+>>>>>>> Add project.
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
@@ -60,4 +65,8 @@ fastlane/test_output
 # After new code Injection tools there's a generated folder /iOSInjectionProject
 # https://github.com/johnno1962/injectionforxcode
 
+<<<<<<< HEAD
 iOSInjectionProject/
+=======
+iOSInjectionProject/
+>>>>>>> Add project.
