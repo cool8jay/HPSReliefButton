@@ -1,4 +1,4 @@
-# README
+# HPSReliefButton
 
 A relief style button for Mac, as Finder's "About this Mac".
 
