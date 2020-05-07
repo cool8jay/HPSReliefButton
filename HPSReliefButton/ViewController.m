@@ -19,10 +19,17 @@
     
     [_button sizeToFit];
     
-    
     _button.font = [NSFont userFontOfSize:40];
     _button.xPadding = 10;
     _button.yPadding = 10;
+}
+
+- (IBAction)button1Action:(id)sender{
+    NSLog(@"button 1 clicked!");
+}
+
+- (IBAction)button2Action:(id)sender{
+    NSLog(@"button 2 clicked!");
 }
 
 @end

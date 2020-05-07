@@ -14,6 +14,7 @@
 		8F9889022092EFF200B7612E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9889002092EFF200B7612E /* Main.storyboard */; };
 		8F98890D2092F01400B7612E /* HPSPlainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F98890A2092F01400B7612E /* HPSPlainView.m */; };
 		8F98890E2092F01400B7612E /* HPSReliefButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F98890C2092F01400B7612E /* HPSReliefButton.m */; };
+		8FFA983F2463CBFB008955B0 /* NSColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFA983E2463CBFB008955B0 /* NSColor+HEX.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		8F98890A2092F01400B7612E /* HPSPlainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSPlainView.m; sourceTree = "<group>"; };
 		8F98890B2092F01400B7612E /* HPSReliefButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSReliefButton.h; sourceTree = "<group>"; };
 		8F98890C2092F01400B7612E /* HPSReliefButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSReliefButton.m; sourceTree = "<group>"; };
+		8FFA983D2463CBFB008955B0 /* NSColor+HEX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSColor+HEX.h"; sourceTree = "<group>"; };
+		8FFA983E2463CBFB008955B0 /* NSColor+HEX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSColor+HEX.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,16 +67,18 @@
 			children = (
 				8F9888F52092EFF200B7612E /* AppDelegate.h */,
 				8F9888F62092EFF200B7612E /* AppDelegate.m */,
-				8F9888FB2092EFF200B7612E /* ViewController.h */,
-				8F9888FC2092EFF200B7612E /* ViewController.m */,
+				8F9888FE2092EFF200B7612E /* Assets.xcassets */,
 				8F9889092092F01400B7612E /* HPSPlainView.h */,
 				8F98890A2092F01400B7612E /* HPSPlainView.m */,
 				8F98890B2092F01400B7612E /* HPSReliefButton.h */,
 				8F98890C2092F01400B7612E /* HPSReliefButton.m */,
-				8F9888FE2092EFF200B7612E /* Assets.xcassets */,
-				8F9889002092EFF200B7612E /* Main.storyboard */,
 				8F9889032092EFF200B7612E /* Info.plist */,
+				8F9889002092EFF200B7612E /* Main.storyboard */,
+				8FFA983D2463CBFB008955B0 /* NSColor+HEX.h */,
+				8FFA983E2463CBFB008955B0 /* NSColor+HEX.m */,
 				8F9888F82092EFF200B7612E /* Supporting Files */,
+				8F9888FB2092EFF200B7612E /* ViewController.h */,
+				8F9888FC2092EFF200B7612E /* ViewController.m */,
 			);
 			path = HPSReliefButton;
 			sourceTree = "<group>";
@@ -112,7 +117,7 @@
 		8F9888EA2092EFF200B7612E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = 100hps;
 				TargetAttributes = {
 					8F9888F12092EFF200B7612E = {
@@ -126,6 +131,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -160,6 +166,7 @@
 				8F9888FA2092EFF200B7612E /* main.m in Sources */,
 				8F9888F72092EFF200B7612E /* AppDelegate.m in Sources */,
 				8F98890E2092F01400B7612E /* HPSReliefButton.m in Sources */,
+				8FFA983F2463CBFB008955B0 /* NSColor+HEX.m in Sources */,
 				8F98890D2092F01400B7612E /* HPSPlainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,15 +195,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -236,15 +251,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

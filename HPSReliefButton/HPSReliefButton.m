@@ -1,5 +1,6 @@
 #import "HPSReliefButton.h"
 #import "HPSPlainView.h"
+#import "NSColor+HEX.h"
 
 @interface HPSReliefButton(){
     BOOL                _isUp;
@@ -53,16 +54,40 @@
     _xPadding = 3;
     _yPadding = 3;
     
-    _normalTextColor = NSColor.blackColor;
+    _normalTextColor = NSColor.controlTextColor;
     _overTextColor = NSColor.whiteColor;
     _pressedTextColor = NSColor.whiteColor;
-    _disabledTextColor = NSColor.grayColor;
-    
+    _disabledTextColor = NSColor.disabledControlTextColor;
     _backNormalColor = NSColor.clearColor;
-    _backOverColor = [NSColor colorWithRed:0.666 green:0.666 blue:0.666 alpha:1];
-    _backPressedColor = [NSColor colorWithRed:0.498 green:0.498 blue:0.498 alpha:1];
+    
+    if(@available(macOS 10.13, *)) {
+        _backOverColor = [NSColor colorNamed:@"back_color"];
+        _backPressedColor = [NSColor colorNamed:@"back_press_color"];
+    } else {
+        _backOverColor = [NSColor colorFromHexString:@"636567"];
+        _backPressedColor = [NSColor colorFromHexString:@"A2A3A4"];
+    }
+
+    [[NSDistributedNotificationCenter defaultCenter] addObserver:self
+                                                        selector:@selector(onThemeModeChanged:)
+                                                            name:@"AppleInterfaceThemeChangedNotification"
+                                                          object:nil];
     
     [self _setUpViews];
+}
+
+- (void)onThemeModeChanged:(NSNotification *)notification{
+    if(@available(macOS 10.13, *)) {
+        _backOverColor = [NSColor colorNamed:@"back_color"];
+        _backPressedColor = [NSColor colorNamed:@"back_press_color"];
+    } else {
+        _backOverColor = [NSColor colorFromHexString:@"b2b2b2"];
+        _backPressedColor = [NSColor colorFromHexString:@"767676"];
+    }
+}
+
+- (BOOL)acceptsFirstMouse:(NSEvent *)theEvent{
+    return YES;
 }
 
 - (NSTextField *)createTextLabel:(NSString*)text fontSize:(int)size color:(NSColor*)textColor{
@@ -89,7 +114,7 @@
     [self removeTrackingArea:_trackingArea];
     
     _trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds
-                                                 options:(NSTrackingMouseEnteredAndExited | NSTrackingActiveInActiveApp | NSTrackingInVisibleRect)
+                                                 options:(NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways | NSTrackingInVisibleRect)
                                                    owner:self
                                                 userInfo:nil];
     
@@ -282,7 +307,7 @@
         
         [NSApp sendAction:self.action to:self.target from:self];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(200 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
-            _userInteractionEnabled = YES;
+            self->_userInteractionEnabled = YES;
         });
     }
 }
@@ -329,6 +354,7 @@
 }
 
 - (void)dealloc{
+    [[NSDistributedNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
